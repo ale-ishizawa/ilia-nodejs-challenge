@@ -49,7 +49,7 @@ See detailed documentation: [Rate Limiting Guide](./ms-wallet/docs/RATE-LIMITING
 
 ```bash
 git clone <repository-url>
-cd ilia-nodejs-challenge
+cd     nodejs-banking-microservices
 ```
 
 ### 2. Configure Environment Variables (Optional)
@@ -167,13 +167,13 @@ All protected routes require JWT in the header:
 Authorization: Bearer <token>
 ```
 
-**Secret Key:** `ILIACHALLENGE` (configurable via `JWT_SECRET`)
+**Secret Key:** `YOUR_JWT_SECRET` (configurable via `JWT_SECRET`)
 
 ### Internal Authentication (gRPC)
 
 Communication between microservices uses separate JWT:
 
-**Secret Key:** `ILIACHALLENGE_INTERNAL` (configurable via `JWT_SECRET_INTERNAL`)
+**Secret Key:** `YOUR_INTERNAL_JWT_SECRET` (configurable via `JWT_SECRET_INTERNAL`)
 
 ## 🧪 Testing with Postman
 
@@ -231,7 +231,7 @@ docker exec -it ms-wallet sh
 ## 📁 Project Structure
 
 ```
-ilia-nodejs-challenge/
+    nodejs-banking-microservices/
 ├── ms-wallet/              # Wallet Microservice
 │   ├── src/
 │   │   ├── modules/
@@ -291,8 +291,8 @@ DB_PORT=5432
 DB_NAME=wallet_db
 DB_USER=postgres
 DB_PASSWORD=postgres
-JWT_SECRET=ILIACHALLENGE
-JWT_SECRET_INTERNAL=ILIACHALLENGE_INTERNAL
+JWT_SECRET=YOUR_JWT_SECRET
+JWT_SECRET_INTERNAL=YOUR_INTERNAL_JWT_SECRET
 GRPC_PORT=50051
 ```
 
@@ -306,8 +306,8 @@ DB_PORT=5432
 DB_NAME=users_db
 DB_USER=postgres
 DB_PASSWORD=postgres
-JWT_SECRET=ILIACHALLENGE
-JWT_SECRET_INTERNAL=ILIACHALLENGE_INTERNAL
+JWT_SECRET=YOUR_INTERNAL_JWT_SECRET
+JWT_SECRET_INTERNAL=YOUR_INTERNAL_JWT_SECRET
 WALLET_GRPC_URL=ms-wallet:50051
 ```
 
